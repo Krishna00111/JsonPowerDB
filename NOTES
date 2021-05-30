@@ -1,0 +1,317 @@
+Login2xplore Internship - Learning Zeal - The Second Round of Selection.
+
+Introduction to JsonPowerDB
+JsonPowerDB is a Real-time, High Performance, Lightweight and Simple to Use, Rest API based Multi-mode DBMS. JsonPowerDB has ready to use API for Json document DB, RDBMS, Key-value DB, GeoSpatial DB and Time Series DB functionality. JPDB supports and advocates for true serverless and pluggable API development.
+In this course the candidate will learn about basics of JsonPowerDB (JPDB) and how to use JPDB for simple database operations. Candidate will learn CRUD and some more important API commands that will be usefull to create a dynamic website or mobile app.
+Use http://api.login2explore.com in place of http://jsonpowerdb.com URL
+
+Creating a Developer Account and Generating Connection Token
+Steps for creating developer account:
+Visit: http://jsonpowerdb.com:5577/user/index.html
+REGISTER
+After registration check your email-id for password.
+Login at http://jsonpowerdb.com:5577/user/index.html using your email and password received.
+First of all change password - Left Navigation >> Change Password.
+Login with new password. 
+Installing Talend API Tester
+Understanding JsonPowerDB and its Features
+JsonPowerDB Use case and Benefits
+
+PUT Command - Creating (Inserting) Record
+Open “Talend API Tester” extension respectively.
+Visit this URL “http://api.login2xplore.com:5577/user/jpdb_view.html”.
+Visit the Help section: http://login2explore.com/jpdb/docs.html
+Go to “PUT”, copy, ‘req” code: and paste in body, of extension “Talend API Tester”.
+In place of URL, put this URL,
+“http://api.login2explore.com:5577/api/iml”.
+The method will be “POST” method.
+Change token number, by visiting: “http://api.login2xplore.com:5577/user/jpdb_view.html”.
+Tools>Token>Connection Token>Copy it>Paste it in the extension>Than>Click Send> Than Send OK 200. Message appear.
+Visit URL > “http://api.login2xplore.com:5577/user/jpdb_view.html”.
+Select > Visualize > JsonDB > Select Database > Employee > It will show the details respectively.
+VI. GET Command - Retrieving Record.
+Open Talend API Tester > My Drive > Add Project > JPDB, CRUD, name = PUT. Save.
+Visit the URL = “http://login2explore.com/jpdb/docs.html”. 
+Follow, “IRL” instructions respectively.
+Change the token number respectively.
+Than, visit=”http://api.login2xplore.com:5577/user/user_tools.html”
+Go to: Visualize>JsonDB>than type the detail there, and change the email, to the email mentioned, in the “Talend API Tester Extension” respectively.
+Than, it will show the details there respectively.
+VII. UPDATE Command - Update a record
+Save As> UPDATE> Paste this command: 
+{
+    "token": "90935621|-31948840175510227|90933325",
+    "cmd": "UPDATE",
+    "dbName": "Employee",
+    "rel": "Emp-Rel",
+    "jsonStr":{
+      "1":{"mobile": 123456789},
+      "2":{"name": "Hare Krishna"}
+    }
+}
+
+2. This is URL : “http://api.login2explore.com:5577/api/iml “
+3. Check here : “http://api.login2xplore.com:5577/user/jpdb_view.html”
+Than, “JsonDB>Check values, the mobile number will be added respectively.
+
+VIII. REMOVE Command - Remove a record
+
+Make new column: DELETE.
+Than paste this code:
+{
+    "token": "90935621|-31948840175510227|90933325",
+    "cmd": "REMOVE",
+    "dbName": "Employee",
+    "rel": "Emp-Rel",
+    "record": 1
+}
+
+3. This will be the URL:”http://api.login2explore.com:5577/api/iml”.
+4. Than, go to this URL, and check here, the data will be deleted respectively.
+http://api.login2xplore.com:5577/user/jpdb_view.html
+
+IX.Ajax Concepts - A Desktop application feel on web-pages
+Difference between “HTTP” and “XML HTTP” requests.
+Type “SUBMIT: vs type “BUTTON” respectively.
+What is “AJAX”.
+
+X. How to use JsonPowerDB in Web PagesFile PDF document
+
+Difference between HTTP and XMLHTTP requests
+
+ HttpRequest is a server side object that represents a request to the server. XMLHttpRequest in a standard javascript object that allows you to make HTTP Requests from the browser in javascript. In summary - one works in the browser, the other in the web server. They also have completely different roles. XMLHttpRequest is for fetching web resources within the browser. HttpRequest represents an incoming request. The XMLHttpRequest object can be used to request data from a web server.
+ ● Update a web page without reloading the page 
+● Request data from a server - after the page has loaded
+ ● Receive data from a server - after the page has loaded
+ ● Send data to a server - in the background 
+
+Difference between type “SUBMIT” vs type “BUTTON”
+
+
+<input type="button"> can be used anywhere, not just within form and they do not submit form if they are in one. Much better suited with Javascript.
+
+<input type="submit"> should be used in forms only and they will send a request (either GET or
+POST) to specified URL. They should not be put in any HTML place.
+
+
+What is AJAX
+● AJAX = Asynchronous JavaScript And XML.
+● AJAX is not a programming language.
+● AJAX just uses a combination of:
+○ A browser built-in XMLHttpRequest object (to request data from a web server)
+○ JavaScript and HTML DOM (to display or use the data).
+
+Example form page:
+
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="en">
+<head>
+<title>Bootstrap Example</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+<h2>Vertical (basic) form</h2>
+<form id="empForm" method="post">
+<div class="form-group">
+<span><label for="empId">Employee ID:</label> <label id="empIdMsg">
+</label></span>
+<input type="text" class="form-control" name="empId" id="empId"
+placeholder="Enter Employee ID" required>
+</div>
+<div class="form-group">
+<label for="empName">Employee Name:</label>
+<input type="text" class="form-control" id="empName"
+placeholder="Enter Employee Name" name="empName">
+</div>
+<div class="form-group">
+<label for="empEmail">Email:</label>
+<input type="email" class="form-control" id="empEmail"
+placeholder="Enter Employee Email" name="empEmail">
+</div>
+<input type="button" class="btn btn-primary" id="empSave" value="Save"
+onclick="saveEmployee();">
+</form>
+</div>
+<script>
+$("#empId").focus();
+
+function validateAndGetFormData() {
+var empIdVar = $("#empId").val();
+if (empIdVar === "") {
+alert("Employee ID Required Value");
+$("#empId").focus();
+return "";
+}
+var empNameVar = $("#empName").val();
+if (empNameVar === "") {
+alert("Employee Name is Required Value");
+$("#empName").focus();
+return "";
+}
+var empEmailVar = $("#empEmail").val();
+if (empEmailVar === "") {
+alert("Employee Email is Required Value");
+$("#empEmail").focus();
+return "";
+}
+var jsonStrObj = {
+empId: empIdVar,
+empName: empNameVar,
+empEmail: empEmailVar,
+};
+return JSON.stringify(jsonStrObj);
+}
+// This method is used to create PUT Json request.
+function createPUTRequest(connToken, jsonObj, dbName, relName) {
+var putRequest = "{\n"
++ "\"token\" : \""
++ connToken
++ "\","
++ "\"dbName\": \""
++ dbName
++ "\",\n" + "\"cmd\" : \"PUT\",\n"
++ "\"rel\" : \""
++ relName + "\","
++ "\"jsonStr\": \n"
++ jsonObj
++ "\n"
++ "}";
+return putRequest;
+}
+function executeCommand(reqString, dbBaseUrl, apiEndPointUrl) {
+var url = dbBaseUrl + apiEndPointUrl;
+var jsonObj;
+$.post(url, reqString, function (result) {
+jsonObj = JSON.parse(result);
+}).fail(function (result) {
+var dataJsonObj = result.responseText;
+jsonObj = JSON.parse(dataJsonObj);
+});
+return jsonObj;
+}
+function resetForm() {
+$("#empId").val("")
+$("#empName").val("");
+$("#empEmail").val("");
+$("#empId").focus();
+}
+function saveEmployee() {
+
+var jsonStr = validateAndGetFormData();
+if (jsonStr === "") {
+return;
+}
+var putReqStr = createPUTRequest("90936861|-31948784479254024|90932362",
+jsonStr, "SAMPLE", "EMP-REL");
+alert(putReqStr);
+jQuery.ajaxSetup({async: false});
+var resultObj = executeCommand(putReqStr,
+"http://api.login2explore.com:5577", "/api/iml");
+alert(JSON.stringify(resultObj));
+jQuery.ajaxSetup({async: true});
+resetForm();
+}
+</script>
+</body>
+</html
+
+XI. Example form page (Modified): 
+
+We have a javascript library jpdb-commons.js that is used to create requests and do ajax calls and help programmers to focus mainly on their page logic. 
+
+# And remove following two functions from the page:
+ ● createPUTRequest() 
+● executeCommand() 
+# Use following javascript at the beginning below the other javascripts. 
+# Rename the method call executeCommand() in saveEmployee() method to executeCommandAtGivenBaseUrl()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XI. Creating a Web Project in NetBeans
+https://youtu.be/fKWH_Rs7t6s
+
+XII. Saving data in JPDB from HTML form
+https://youtu.be/OS3DFcN9YH8
+
+XIII. JPDB using jpdb common js - A Javascript library to make it even easy and fast for developers
+https://www.youtube.com/watch?v=eMBDrrZ0I1Y
+
+XIV. Useful Commands to Practice
+JPDB Documentation Page: http://login2explore.com/jpdb/docs.html#jpdb-command-request 
+Practice following commands on the above JsonPowerDB documentation link:
+1. IML Commands
+PUT
+PUT_ALL
+UPDATE
+REMOVE
+2. All IRL Commands
+XV. Publish Your Code to Github
+Publish the small project you have created in NetBeans to Github. Steps to follow:
+# What is Github (skip if you already know):
+https://www.simplilearn.com/tutorials/git-tutorial/what-is-github
+# Login to your Github account (create if you do not have one).
+# Create a new repository for your project with readme.md file.
+https://docs.github.com/en/github/getting-started-with-github/create-a-repo
+# Upload your code to the newly created repository using Netbeans / Manually.
+https://www.youtube.com/watch?v=glYY2UTEoOM
+# Refer following links to understand readme.md file.
+Writing a good readme.md: https://guides.github.com/features/mastering-markdown/
+Good examples of readme.md:
+https://github.com/BeAgarwal/JsonPowerDB
+https://github.com/dbader/readme-template
+# Update the readme.md file with atleast following sections:
+Required Sections:
+Title of the Project
+Description
+Benefits of using JsonPowerDB
+Release History (release of your JsonPowerDB related code on Github)
+Additional you can have:
+Table of contents
+Illustrations
+Scope of functionalities
+Examples of use
+Project status
+Sources
+Other information
+URL : https://github.com/Krishna00111/JsonPowerDB
